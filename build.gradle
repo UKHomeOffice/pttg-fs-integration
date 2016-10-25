@@ -48,6 +48,7 @@ artifactory {
     }
 
     println 'user = ' + System.env.ARTIFACTORY_USER
+    println 'user = ' + System.env.BUILD_NUMBER
 }
 
 
