@@ -46,6 +46,9 @@ artifactory {
             publications ('mavenJava')
         }
     }
+
+    println 'user = ' + "${ARTIFACTORY_USER}"
+    println 'user (env) = ' + System.env.ARTIFACTORY_USER
 }
 
 
