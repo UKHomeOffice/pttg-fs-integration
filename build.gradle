@@ -37,7 +37,7 @@ artifactory {
     contextUrl = 'https://artifactory.digital.homeoffice.gov.uk/artifactory'
     publish {
         repository {
-            repoKey = 'libs-snapshot-local'
+            repoKey = 'libs-release-local'
             username = System.env.ARTIFACTORY_USER
             password = System.env.ARTIFACTORY_PASS
             maven = true
