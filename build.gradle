@@ -38,8 +38,8 @@ artifactory {
     publish {
         repository {
             repoKey = 'libs-snapshot-local'
-            username = "${ARTIFACTORY_USER}"
-            password = "${ARTIFACTORY_PASS}"
+            username = System.env.ARTIFACTORY_USER
+            password = System.env.ARTIFACTORY_PASS
             maven = true
         }
         defaults {
@@ -47,8 +47,7 @@ artifactory {
         }
     }
 
-    println 'user = ' + "${ARTIFACTORY_USER}"
-    println 'user (env) = ' + System.env.ARTIFACTORY_USER
+    println 'user = ' + System.env.ARTIFACTORY_USER
 }
 
 
