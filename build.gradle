@@ -7,7 +7,6 @@ buildscript {
     }
     dependencies {
         classpath 'pttg-gradle-common:pttgCommonGradle:1.5.RELEASE'
-
         classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.4.0"
     }
 }
@@ -20,7 +19,11 @@ apply plugin: "com.jfrog.artifactory"
 group 'com.hod'
 version '0.1.0'
 
-mainClassName = "na"
+mainClassName = "uk.gov.digital.ho.proving.financialstatus.api.xxx"
+
+repositories{
+    maven { url 'https://artifactory.digital.homeoffice.gov.uk/artifactory/libs-snapshot-local' }
+}
 
 publishing {
     publications {
@@ -33,7 +36,7 @@ publishing {
 artifactory {
     contextUrl = 'https://artifactory.digital.homeoffice.gov.uk/artifactory'
     publish {
-        repository { // PUBLISH access used by Jenkins - do not publish to artifactory for local working, only to maven local
+        repository {
             repoKey = 'libs-release-local'
             username = System.env.ARTIFACTORY_USER
             password = System.env.ARTIFACTORY_PASS
@@ -44,9 +47,8 @@ artifactory {
         }
     }
 
-    println "ARTIFACTORY_USER=" + System.env.ARTIFACTORY_USER
+    println 'artifactory user = ' + System.env.ARTIFACTORY_USER
 }
-
 
 dependencies {
 
