@@ -24,13 +24,6 @@ version '0.1.0'
 
 mainClassName = "na"
 
-repositories{
-    maven {
-        name 'releases'
-        url 'https://artifactory.digital.homeoffice.gov.uk/artifactory/libs-release-local'
-    }
-}
-
 publishing {
     publications {
         mavenJava(MavenPublication) {
