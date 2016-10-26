@@ -81,16 +81,6 @@ compileGroovy.dependsOn "compileScala"
 compileTestGroovy.dependsOn "compileTestScala"
 
 
-if (System.getenv('VERSION')) {
-    version = System.getenv('VERSION')
-}
-if (System.getenv('BUILD_NUMBER')) {
-    version = version + '-' + System.getenv('BUILD_NUMBER')
-}
-if (System.getenv('GIT_COMMIT')) {
-    version = version + '.' + System.getenv('GIT_COMMIT')
-}
-
 tasks.withType(JavaCompile) {
     options.fork = true  // Fork your compilation into a child process
     options.forkOptions.setMemoryMaximumSize("256m")
