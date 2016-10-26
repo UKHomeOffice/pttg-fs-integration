@@ -34,7 +34,7 @@ artifactory {
     contextUrl = 'https://artifactory.digital.homeoffice.gov.uk/artifactory'
     publish {
         repository { // PUBLISH access used by Jenkins - do not publish to artifactory for local working, only to maven local
-            repoKey = 'libs-release-local'
+            repoKey = 'libs-snapshot-local'
             username = System.env.ARTIFACTORY_USER
             password = System.env.ARTIFACTORY_PASS
             maven = true
