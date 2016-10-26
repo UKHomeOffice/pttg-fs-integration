@@ -9,13 +9,11 @@ buildscript {
         classpath 'pttg-gradle-common:pttgCommonGradle:1.5.RELEASE'
 
         classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.4.0"
-        classpath 'net.linguica.gradle:maven-settings-plugin:0.5'
     }
 }
 
 apply plugin: 'scala'
 apply plugin: 'pttgCommonGradle'
-apply plugin: 'net.linguica.maven-settings'
 apply plugin: 'maven-publish'
 apply plugin: "com.jfrog.artifactory"
 
@@ -23,13 +21,6 @@ group 'com.hod'
 version '0.1.0'
 
 mainClassName = "na"
-
-repositories{
-    maven {
-        name 'releases'
-        url 'https://artifactory.digital.homeoffice.gov.uk/artifactory/libs-release-local'
-    }
-}
 
 publishing {
     publications {
