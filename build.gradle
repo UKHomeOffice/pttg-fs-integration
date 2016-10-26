@@ -43,8 +43,6 @@ artifactory {
             publications ('mavenJava')
         }
     }
-
-    println "ARTIFACTORY_USER=" + System.env.ARTIFACTORY_USER
 }
 
 
