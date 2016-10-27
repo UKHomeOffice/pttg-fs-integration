@@ -45,7 +45,6 @@ artifactory {
     }
 }
 
-
 dependencies {
 
     compile libraries.groovy
