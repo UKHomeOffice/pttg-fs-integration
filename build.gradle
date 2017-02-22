@@ -2,12 +2,9 @@ buildscript {
     repositories {
         mavenCentral()
         jcenter()
-        // maven { url "https://github.com/UKHomeOffice/pttg-gradle-repo/raw/master/releases" }
         maven { url "https://plugins.gradle.org/m2/" }
     }
     dependencies {
-       //  classpath 'pttg-gradle-common:pttgCommonGradle:1.8.RELEASE'
-
         classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.4.7"
     }
 }
@@ -16,7 +13,6 @@ buildscript {
 apply plugin: 'scala'
 apply plugin: 'java'
 apply plugin: 'groovy'
-//apply plugin: 'pttgCommonGradle'
 apply plugin: 'maven-publish'
 apply plugin: "com.jfrog.artifactory"
 
