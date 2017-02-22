@@ -2,25 +2,28 @@ buildscript {
     repositories {
         mavenCentral()
         jcenter()
-        maven { url "https://github.com/UKHomeOffice/pttg-gradle-repo/raw/master/releases" }
+        // maven { url "https://github.com/UKHomeOffice/pttg-gradle-repo/raw/master/releases" }
         maven { url "https://plugins.gradle.org/m2/" }
     }
     dependencies {
-        classpath 'pttg-gradle-common:pttgCommonGradle:1.8.RELEASE'
+       //  classpath 'pttg-gradle-common:pttgCommonGradle:1.8.RELEASE'
 
         classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.4.7"
     }
 }
 
+
 apply plugin: 'scala'
-apply plugin: 'pttgCommonGradle'
+apply plugin: 'java'
+apply plugin: 'groovy'
+//apply plugin: 'pttgCommonGradle'
 apply plugin: 'maven-publish'
 apply plugin: "com.jfrog.artifactory"
 
 group 'com.hod'
 version '0.1.0-SNAPSHOT'
 
-mainClassName = "na"
+//mainClassName = "na"
 
 publishing {
     publications {
@@ -43,6 +46,15 @@ artifactory {
             publications ('mavenJava')
         }
     }
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+    maven { url "https://plugins.gradle.org/m2/" }
+    maven { url "http://repo.spring.io/plugins-release" }
+    maven { url 'https://repo.spring.io/libs-milestone' }
 }
 
 dependencies {
